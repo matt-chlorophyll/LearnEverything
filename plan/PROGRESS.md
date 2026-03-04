@@ -24,9 +24,9 @@ LearnEverything/
     └── PROGRESS.md          ← 本文件
 ```
 
-**待创建的运行时目录（将在 skill 首次运行时自动创建）：**
-- `domains/`
-- `unknown-unknowns/`
+**运行时目录：** ✅ 已创建
+- `domains/` （含 .gitkeep）
+- `unknown-unknowns/` （含 .gitkeep）
 
 ---
 
@@ -73,3 +73,4 @@ LearnEverything/
 |------|---------|---------|
 | 2026-03-04 | 项目初始化，创建设计方案和项目指令 | CLAUDE.md, plan/v1-system-design.md |
 | 2026-03-04 | 创建进度记录文档 | plan/PROGRESS.md |
+| 2026-03-04 | 创建运行时目录 domains/, unknown-unknowns/ | .gitkeep files |
