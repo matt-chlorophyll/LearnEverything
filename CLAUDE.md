@@ -22,11 +22,12 @@ LearnEverything/
 │       ├── meta.json            # 领域元信息
 │       ├── knowledge-graph.json # 知识图谱
 │       ├── sessions/            # session 摘要
-│       └── docs/                # AI 生成的学习文档
+│       ├── docs/                # AI 生成的学习文档
+│       └── discussions/         # 验证对话记录
 └── unknown-unknowns/            # 跨领域盲点发现记录
 ```
 
-对应的 skill 文件位于 `~/.claude/skills/learn-everything/`。
+对应的 skill 文件位于 `.claude/skills/learn-everything/`。
 
 ## 技术约定
 

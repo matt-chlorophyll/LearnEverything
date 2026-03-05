@@ -1,0 +1,22 @@
+{
+  "name": "learn-everything",
+  "description": "AI-driven progressive interactive learning system based on Bloom 2-Sigma theory",
+  "version": "1.0.0",
+  "author": {
+    "name": "James",
+    "url": "https://github.com/matt-chlorophyll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matt-chlorophyll/LearnEverything"
+  },
+  "keywords": [
+    "learning",
+    "education",
+    "bloom-2-sigma",
+    "knowledge-graph",
+    "interactive-learning",
+    "unknown-unknowns"
+  ],
+  "license": "MIT"
+}
