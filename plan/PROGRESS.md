@@ -1,6 +1,6 @@
 # LearnEverything 开发进度记录
 
-## 当前状态：Step 1 完成，准备进入 Step 2
+## 当前状态：Step 3 完成，准备进入 Step 4
 
 ---
 
@@ -30,27 +30,40 @@ LearnEverything/
 
 ---
 
-## Step 2: 创建 Skill 主文件 ⬜
+## Step 2: 创建 Skill 主文件 ✅
 
-**目标：**
-- `~/.claude/skills/learn-everything/SKILL.md` — 角色定义、workflow 概述、触发方式
-- `~/.claude/skills/learn-everything/.claude-plugin/plugin.json` — 插件配置
+### 2026-03-04
 
-**状态：** 未开始
+**完成内容：**
+- 创建 `~/.claude/skills/learn-everything/SKILL.md` — Skill 入口文件（~130 行）
+  - YAML frontmatter: name, description, allowed-tools, user-invocable
+  - 角色定义（Bloom 2-Sigma 一对一辅导老师）
+  - 5 条核心原则
+  - 6 个 reference 文件索引表（progressive loading）
+  - 5 阶段 workflow 概述 + 流程图
+  - 项目路径约定 + 知识图谱节点状态定义
+  - `/learn` 触发后的快速启动流程（新建 vs 继续）
+  - Unknown Unknown 发现时机说明
+- 创建 `~/.claude/skills/learn-everything/.claude-plugin/plugin.json` — 插件元信息
+- 创建 `~/.claude/skills/learn-everything/references/` 目录（为 Step 3 预留）
+- 验证 Skill 已被 Claude Code 识别，`/learn` 触发可用
 
 ---
 
-## Step 3: 创建 Reference 文件 ⬜
+## Step 3: 创建 Reference 文件 ✅
 
-**目标（按优先级）：**
-1. `session-flow.md` — 完整 5 阶段流程详细指令
-2. `diagnostic-engine.md` — 诊断提问策略和规则
-3. `document-generation.md` — 文档生成格式和质量标准
-4. `understanding-check.md` — AI 提问验证方法论
-5. `unknown-unknown-discovery.md` — 盲点发现三层机制
-6. `knowledge-graph-spec.md` — 知识图谱数据结构和更新规则
+### 2026-03-05
 
-**状态：** 未开始
+**完成内容：**
+- 创建 6 个 reference 文件于 `~/.claude/skills/learn-everything/references/`：
+  1. `knowledge-graph-spec.md` — 知识图谱 JSON schema、状态转换规则、confidence 计算、meta.json 规范、初始化模板
+  2. `session-flow.md` — 初始化/恢复逻辑、5 阶段循环详细步骤、session 摘要格式、循环/结束条件
+  3. `diagnostic-engine.md` — 冷启动 5-8 题渐进诊断、继续学习记忆确认、动态调整规则、结果映射到知识图谱
+  4. `document-generation.md` — 概念选择优先级、文档模板（定义→动机→原理→关联→边界）、质量标准、保存规范
+  5. `understanding-check.md` — 阶段 3 验证策略（概念/机制/技能类）、阶段 4 练习形式（场景/对比/实践题）、confidence 计算
+  6. `unknown-unknown-discovery.md` — 三层发现机制（自然暴露/边界扫描/跨领域关联）、记录格式规范
+- 所有文件名与 SKILL.md 引用完全匹配
+- Skill 现已具备完整执行指令，可通过 `/learn` 触发使用
 
 ---
 
@@ -74,3 +87,5 @@ LearnEverything/
 | 2026-03-04 | 项目初始化，创建设计方案和项目指令 | CLAUDE.md, plan/v1-system-design.md |
 | 2026-03-04 | 创建进度记录文档 | plan/PROGRESS.md |
 | 2026-03-04 | 创建运行时目录 domains/, unknown-unknowns/ | .gitkeep files |
+| 2026-03-04 | 创建 Skill 主文件和插件配置 | SKILL.md, plugin.json |
+| 2026-03-05 | 创建 6 个 reference 文件，Skill 完整可用 | references/*.md |
