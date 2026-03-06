@@ -80,7 +80,8 @@ Read references/session-flow.md
 │       ├── knowledge-graph.json # 知识图谱（节点状态追踪）
 │       ├── sessions/            # session 摘要（{YYYY-MM-DD-HHmm}.md）
 │       ├── docs/                # 学习文档（{序号}-{概念名}.md）
-│       └── discussions/         # 验证对话记录（{序号}-{概念名}.md）
+│       ├── discussions/         # 验证对话记录（{序号}-{概念名}.md）
+│       └── quotes/              # 金句记录（{YYYY-MM-DD}.md，按天追加）
 └── unknown-unknowns/            # 跨领域盲点发现记录
 ```
 
@@ -120,7 +121,16 @@ Read references/session-flow.md
 
 直接使用 AskUserQuestion 询问用户想学什么领域/主题。
 
-### Step 4: 进入学习循环
+### Step 4: 学习意图对话
+
+用户选择领域后（无论新领域还是继续学习），先进行一轮简短对话了解学习意图：
+
+- 询问用户："今天想聊点什么方向？有什么特别想了解的吗？"
+- 了解用户当天的学习动机、兴趣方向、近期触发点
+- 将用户的意图作为后续概念选择的参考因素（但不完全覆盖知识图谱的推荐逻辑）
+- 如果用户没有特别想法（回答"没有"/"随便"/"你来安排"等），按知识图谱推荐继续
+
+### Step 5: 进入学习循环
 
 - **新领域**：创建目录结构 → 初始化 `meta.json` 和 `knowledge-graph.json` → 进入阶段 1（诊断）
 - **继续学习**：加载知识图谱 + 最近 session 摘要 → 进入阶段 1（记忆确认）→ 选择下一个概念

@@ -23,7 +23,8 @@ LearnEverything/
 │       ├── knowledge-graph.json # 知识图谱
 │       ├── sessions/            # session 摘要
 │       ├── docs/                # AI 生成的学习文档
-│       └── discussions/         # 验证对话记录
+│       ├── discussions/         # 验证对话记录
+│       └── quotes/              # 金句记录（{YYYY-MM-DD}.md）
 └── unknown-unknowns/            # 跨领域盲点发现记录
 ```
 
