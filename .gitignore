@@ -1,0 +1,6 @@
+# Domain learning data (keep wittgenstein-philosophy as example)
+domains/*
+!domains/wittgenstein-philosophy/
+
+# Runtime directories
+unknown-unknowns/

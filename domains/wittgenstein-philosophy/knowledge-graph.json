@@ -1,0 +1,145 @@
+{
+  "nodes": [
+    {
+      "id": "tractatus-core-thesis",
+      "name": "《逻辑哲学论》核心命题",
+      "status": "mastered",
+      "confidence": 0.5,
+      "lastTested": "2026-03-05T00:00:00+08:00",
+      "dependencies": [],
+      "relatedDomains": [],
+      "sessionHistory": [
+        {
+          "date": "2026-03-05T00:00:00+08:00",
+          "result": "pass",
+          "notes": "能准确解释有意义命题的条件（逻辑上可能的事态而非真实事实），正确区分可说与不可说，并能将框架应用到AI相关的新场景"
+        }
+      ]
+    },
+    {
+      "id": "picture-theory",
+      "name": "图像论（语言如何描绘世界）",
+      "status": "mastered",
+      "confidence": 0.5,
+      "lastTested": "2026-03-06T00:00:00+08:00",
+      "dependencies": ["tractatus-core-thesis"],
+      "relatedDomains": [],
+      "sessionHistory": [
+        {
+          "date": "2026-03-06T00:00:00+08:00",
+          "result": "pass",
+          "notes": "能用自己的语言重构三层结构（结构对应、元素对应、逻辑形式），跨领域类比（编程语言、音乐）出色，自发提出逻辑形式不可说的矛盾并展现自我修正推理"
+        }
+      ]
+    },
+    {
+      "id": "limits-of-language",
+      "name": "语言的界限即世界的界限",
+      "status": "mastered",
+      "confidence": 0.7,
+      "lastTested": "2026-03-11T00:00:00+08:00",
+      "dependencies": ["tractatus-core-thesis"],
+      "relatedDomains": [],
+      "sessionHistory": [
+        {
+          "date": "2026-03-11T00:00:00+08:00",
+          "result": "pass",
+          "notes": "准确区分语言限制vs个人限制，自我修正'逻辑形式有限'为'逻辑形式划出边界'，掌握事实描述vs价值判断的区分并能迁移应用（善恶→AI与爱情），对梯子比喻有初步了解"
+        }
+      ]
+    },
+    {
+      "id": "saying-vs-showing",
+      "name": "可说与不可说",
+      "status": "unknown",
+      "confidence": 0.0,
+      "lastTested": null,
+      "dependencies": ["limits-of-language"],
+      "relatedDomains": [],
+      "sessionHistory": []
+    },
+    {
+      "id": "language-games",
+      "name": "语言游戏",
+      "status": "unknown",
+      "confidence": 0.0,
+      "lastTested": null,
+      "dependencies": ["tractatus-core-thesis"],
+      "relatedDomains": [],
+      "sessionHistory": []
+    },
+    {
+      "id": "early-vs-late-wittgenstein",
+      "name": "前期与后期维特根斯坦",
+      "status": "unknown",
+      "confidence": 0.0,
+      "lastTested": null,
+      "dependencies": ["tractatus-core-thesis", "language-games"],
+      "relatedDomains": [],
+      "sessionHistory": []
+    },
+    {
+      "id": "family-resemblance",
+      "name": "家族相似性",
+      "status": "undiscovered",
+      "confidence": 0.0,
+      "lastTested": null,
+      "dependencies": ["language-games"],
+      "relatedDomains": [],
+      "sessionHistory": []
+    },
+    {
+      "id": "private-language-argument",
+      "name": "私人语言论证",
+      "status": "undiscovered",
+      "confidence": 0.0,
+      "lastTested": null,
+      "dependencies": ["language-games"],
+      "relatedDomains": [],
+      "sessionHistory": []
+    },
+    {
+      "id": "logical-atomism",
+      "name": "逻辑原子主义",
+      "status": "undiscovered",
+      "confidence": 0.0,
+      "lastTested": null,
+      "dependencies": ["tractatus-core-thesis"],
+      "relatedDomains": [],
+      "sessionHistory": []
+    },
+    {
+      "id": "tractatus-paradox",
+      "name": "《逻辑哲学论》的自我取消悖论（梯子比喻）",
+      "status": "undiscovered",
+      "confidence": 0.0,
+      "lastTested": null,
+      "dependencies": ["limits-of-language"],
+      "relatedDomains": [],
+      "sessionHistory": []
+    },
+    {
+      "id": "fact-value-distinction",
+      "name": "事实与价值判断的区分",
+      "status": "undiscovered",
+      "confidence": 0.0,
+      "lastTested": null,
+      "dependencies": ["limits-of-language"],
+      "relatedDomains": [],
+      "sessionHistory": []
+    }
+  ],
+  "edges": [
+    {"from": "tractatus-core-thesis", "to": "picture-theory", "type": "extends"},
+    {"from": "tractatus-core-thesis", "to": "limits-of-language", "type": "extends"},
+    {"from": "limits-of-language", "to": "saying-vs-showing", "type": "extends"},
+    {"from": "tractatus-core-thesis", "to": "language-games", "type": "relates-to"},
+    {"from": "tractatus-core-thesis", "to": "early-vs-late-wittgenstein", "type": "relates-to"},
+    {"from": "language-games", "to": "early-vs-late-wittgenstein", "type": "relates-to"},
+    {"from": "language-games", "to": "family-resemblance", "type": "extends"},
+    {"from": "language-games", "to": "private-language-argument", "type": "extends"},
+    {"from": "tractatus-core-thesis", "to": "logical-atomism", "type": "requires"},
+    {"from": "limits-of-language", "to": "tractatus-paradox", "type": "extends"},
+    {"from": "limits-of-language", "to": "fact-value-distinction", "type": "extends"}
+  ]
+}
