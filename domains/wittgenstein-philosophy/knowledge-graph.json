@@ -51,12 +51,23 @@
     {
       "id": "saying-vs-showing",
       "name": "可说与不可说",
-      "status": "unknown",
-      "confidence": 0.0,
-      "lastTested": null,
+      "status": "mastered",
+      "confidence": 0.9,
+      "lastTested": "2026-03-13T00:00:00+08:00",
       "dependencies": ["limits-of-language"],
       "relatedDomains": [],
-      "sessionHistory": []
+      "sessionHistory": [
+        {
+          "date": "2026-03-12T00:00:00+08:00",
+          "result": "partial",
+          "notes": "能区分说与显示的基本含义，但初始对'显示'理解偏向'间接暗示'需修正；举例时将关系搞反（善良的例子）；练习中3题对2题（误判关于逻辑形式的命题为显示而非试图说不可说的）。讨论中展现优秀洞察：提出'人如何通过显示理解逻辑形式'的深层问题，独立发现'能说→必然显示'的单向蕴含关系"
+        },
+        {
+          "date": "2026-03-13T00:00:00+08:00",
+          "result": "pass",
+          "notes": "复习轮：记忆保持优秀，显示vs暗示区分和单向蕴含关系都准确回忆。验证中独立完成多层分析（音乐与情感的双重不可说性、红花与对应关系的三层结构）。练习4题全对，能精准拆解不可说概念。提出'显示无处不在'的深层洞察——试图说不可说的句子其形式仍在显示逻辑结构"
+        }
+      ]
     },
     {
       "id": "language-games",
@@ -127,6 +138,16 @@
       "dependencies": ["limits-of-language"],
       "relatedDomains": [],
       "sessionHistory": []
+    },
+    {
+      "id": "forms-of-life",
+      "name": "生活形式（实践中的理解）",
+      "status": "undiscovered",
+      "confidence": 0.0,
+      "lastTested": null,
+      "dependencies": ["language-games"],
+      "relatedDomains": [],
+      "sessionHistory": []
     }
   ],
   "edges": [
@@ -140,6 +161,8 @@
     {"from": "language-games", "to": "private-language-argument", "type": "extends"},
     {"from": "tractatus-core-thesis", "to": "logical-atomism", "type": "requires"},
     {"from": "limits-of-language", "to": "tractatus-paradox", "type": "extends"},
-    {"from": "limits-of-language", "to": "fact-value-distinction", "type": "extends"}
+    {"from": "limits-of-language", "to": "fact-value-distinction", "type": "extends"},
+    {"from": "saying-vs-showing", "to": "tractatus-paradox", "type": "extends"},
+    {"from": "language-games", "to": "forms-of-life", "type": "extends"}
   ]
 }
