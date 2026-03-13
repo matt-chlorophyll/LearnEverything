@@ -145,6 +145,25 @@ weak ──重新学习中──▶ learning
 }
 ```
 
+### 新领域 learner-profile.json
+
+初始化模板详见 `learner-profile-spec.md`。与 `meta.json` 同时创建。
+
+```json
+{
+  "domain": "{domain-name}",
+  "sessionsObserved": 0,
+  "thinkingPatterns": [],
+  "strengths": [],
+  "weaknesses": [],
+  "preferences": {
+    "scaffoldingLevel": "medium",
+    "challengeAppetite": "medium"
+  },
+  "confidenceTrend": "stable"
+}
+```
+
 ---
 
 ## 阶段 5 更新操作

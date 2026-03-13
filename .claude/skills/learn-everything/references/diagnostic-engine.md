@@ -87,6 +87,13 @@
 3. **用户完全不了解的概念** → 添加节点，状态 `unknown`，confidence 0.0
 4. **诊断中发现的关联概念**（用户未提及但存在依赖关系）→ 添加节点，状态 `undiscovered`
 
+### 参考学习者画像
+
+如果 `domains/{domain}/learner-profile.json` 存在且 `sessionsObserved > 0`：
+- 诊断问题的难度参考 `scaffoldingLevel`：high 时问题更基础、引导更多；low 时可更直接
+- 诊断方式参考 `thinkingPatterns`：如果用户偏好类比思维，可用类比式问题作为探测
+- 已知的 `weaknesses` 可作为继续学习诊断的重点确认方向
+
 ### 确定起始教学概念
 
 从知识图谱中选择第一个教学概念，优先级：

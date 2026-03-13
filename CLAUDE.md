@@ -21,6 +21,7 @@ LearnEverything/
 │   └── {domain-name}/
 │       ├── meta.json            # 领域元信息
 │       ├── knowledge-graph.json # 知识图谱
+│       ├── learner-profile.json # 学习者画像
 │       ├── sessions/            # session 摘要
 │       ├── docs/                # AI 生成的学习文档
 │       ├── discussions/         # 验证对话记录
@@ -43,9 +44,9 @@ LearnEverything/
 1. **初始化/恢复** — 新领域创建目录，继续学习则加载知识图谱+最近摘要
 2. **诊断** — 冷启动用 5-8 个渐进问题探测起点；继续学习用 2-3 个问题确认记忆
 3. **文档生成** — 单一概念聚焦，500-1000 字
-4. **AI 提问验证** — 混合判定：概念类要求解释+举例，技能类要求解题
+4. **AI 提问验证** — 混合判定：概念类要求解释+举例，技能类要求解题；含深度追问（追问链、反例挑战、边界探测、元认知提问）
 5. **练习** — 根据内容类型出场景题/对比题/实践题
-6. **总结** — 更新知识图谱，生成 session 摘要，记录 unknown unknowns
+6. **总结** — 更新知识图谱、学习者画像，生成 session 摘要，记录 unknown unknowns
 
 ## Unknown Unknown 发现机制
 
@@ -55,7 +56,7 @@ LearnEverything/
 
 ## 开发注意事项
 
-- 详细设计方案见 `plan/v1-system-design.md`
+- 详细设计方案见 `plan/v1-system-design.md`（初版）和 `plan/v2-deep-questioning-and-personalization.md`（深度提问+个性化）
 - Skill 使用 progressive loading 模式：主 SKILL.md + references/ 子文件
 - 知识图谱节点状态：mastered / learning / weak / unknown / undiscovered
 - 支持多领域并行学习，各领域独立追踪进度

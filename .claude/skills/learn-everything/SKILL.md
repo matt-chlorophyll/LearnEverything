@@ -33,6 +33,9 @@ user-invocable: true
 | `references/diagnostic-engine.md` | 诊断提问策略与水平探测 | 阶段 1（诊断）时 |
 | `references/document-generation.md` | 学习文档生成规范 | 阶段 2（生成文档）时 |
 | `references/understanding-check.md` | 理解验证与练习方法论 | 阶段 3（提问验证）时 |
+| `references/deep-questioning.md` | 深度追问策略（4 种） | 阶段 3（与 understanding-check 一起）|
+| `references/intelligent-feedback.md` | 基于画像的智能反馈规则 | 阶段 3（与 understanding-check 一起）|
+| `references/learner-profile-spec.md` | 学习者画像 schema 与更新规则 | 初始化和阶段 5（总结）时 |
 | `references/unknown-unknown-discovery.md` | 盲点发现机制 | 阶段 3-5 时 |
 | `references/knowledge-graph-spec.md` | 知识图谱数据规范 | 初始化和阶段 5（总结）时 |
 
@@ -78,6 +81,7 @@ Read references/session-flow.md
 │   └── {domain-name}/
 │       ├── meta.json            # 领域元信息（创建时间、总 session 数等）
 │       ├── knowledge-graph.json # 知识图谱（节点状态追踪）
+│       ├── learner-profile.json # 学习者画像（思维模式、长短处、偏好）
 │       ├── sessions/            # session 摘要（{YYYY-MM-DD-HHmm}.md）
 │       ├── docs/                # 学习文档（{序号}-{概念名}.md）
 │       ├── discussions/         # 验证对话记录（{序号}-{概念名}.md）

@@ -14,22 +14,24 @@
    ~/repos/LearnEverything/domains/{domain-name}/
    ├── meta.json
    ├── knowledge-graph.json
+   ├── learner-profile.json
    ├── sessions/
    ├── docs/
    ├── discussions/
    └── quotes/
    ```
-3. 按 `knowledge-graph-spec.md` 中的模板初始化 `meta.json` 和 `knowledge-graph.json`
+3. 按 `knowledge-graph-spec.md` 中的模板初始化 `meta.json`、`knowledge-graph.json` 和 `learner-profile.json`
 4. 进入**阶段 1（冷启动诊断）**
 
 ### 继续学习恢复
 
 1. 读取 `meta.json` 获取领域状态
 2. 读取 `knowledge-graph.json` 加载知识图谱
-3. 读取 `sessions/` 下最近一次 session 摘要（按文件名排序取最新）
-4. 向用户简要报告学习进度：已掌握概念数 / 总概念数，上次学习的概念
-5. **学习意图对话**：询问"今天想聊点什么方向？有什么特别想了解的吗？"，将用户意图作为概念选择参考；如果用户没有特别想法，按知识图谱推荐继续
-6. 进入**阶段 1（记忆确认诊断）**
+3. 读取 `learner-profile.json` 加载学习者画像
+4. 读取 `sessions/` 下最近一次 session 摘要（按文件名排序取最新）
+5. 向用户简要报告学习进度：已掌握概念数 / 总概念数，上次学习的概念
+6. **学习意图对话**：询问"今天想聊点什么方向？有什么特别想了解的吗？"，将用户意图作为概念选择参考；如果用户没有特别想法，按知识图谱推荐继续
+7. 进入**阶段 1（记忆确认诊断）**
 
 ---
 
@@ -59,13 +61,14 @@
 
 ### 阶段 3：提问验证
 
-**读取**：`references/understanding-check.md`（阶段 3 部分）
+**读取**：`references/understanding-check.md`（阶段 3 部分）+ `references/intelligent-feedback.md`
 
 1. 根据概念类型选择验证策略（概念类/机制类/技能类）
 2. 提出验证问题，要求用户用自己的话回答
-3. 根据回答质量追问或补充
-4. 每题解析后开放讨论窗口，用户确认后再继续下一题
+3. 根据回答质量执行深度追问（策略见 `deep-questioning.md`）
+4. AI 解析总结后开放讨论窗口，用户确认后再继续下一题
 5. 评估理解程度
+6. 内部记录学习者行为观察（为阶段 5 画像更新提供素材）
 
 **同时执行**：读取 `references/unknown-unknown-discovery.md`，在验证过程中识别关联盲点
 
@@ -86,15 +89,17 @@
 
 ### 阶段 5：总结
 
-**读取**：`references/knowledge-graph-spec.md`（阶段 5 更新操作）
+**读取**：`references/knowledge-graph-spec.md`（阶段 5 更新操作）+ `references/learner-profile-spec.md`
 
 1. **更新知识图谱**：按 `knowledge-graph-spec.md` 的规则更新节点状态和 confidence
-2. **生成 session 摘要**：保存到 `sessions/{YYYY-MM-DD-HHmm}.md`，包含：
+2. **更新学习者画像**：根据阶段 3-4 期间的行为观察，更新 `learner-profile.json`（规则详见 `learner-profile-spec.md`）
+3. **生成 session 摘要**：保存到 `sessions/{YYYY-MM-DD-HHmm}.md`，包含：
    - 本次学习的概念及掌握情况
    - 发现的 unknown unknowns
+   - 学习者画像更新内容
    - 下次建议学习方向
-3. **记录 unknown unknowns**：如有发现，按 `unknown-unknown-discovery.md` 的规范记录
-4. **向用户汇报**：本次学习成果、掌握度变化、建议下一步
+4. **记录 unknown unknowns**：如有发现，按 `unknown-unknown-discovery.md` 的规范记录
+5. **向用户汇报**：本次学习成果、掌握度变化、建议下一步
 
 ---
 
@@ -112,6 +117,10 @@
 
 ## 发现的盲点
 - {列出本次发现的 unknown unknowns，无则写"无"}
+
+## 学习者画像更新
+- 本次观察：{记录观察到的思维模式、长处、短板等}
+- 画像变更：{新增/强化/弱化了哪些画像条目，无变更写"无"}
 
 ## 下次建议
 - {根据知识图谱推荐下一个学习概念及原因}
