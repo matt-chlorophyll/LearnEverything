@@ -73,10 +73,10 @@ Read references/session-flow.md
 
 ## 项目路径约定
 
-所有学习数据存储在 `~/repos/LearnEverything/`：
+所有学习数据存储在项目根目录下：
 
 ```
-~/repos/LearnEverything/
+./
 ├── domains/                     # 学习领域数据
 │   └── {domain-name}/
 │       ├── meta.json            # 领域元信息（创建时间、总 session 数等）
@@ -111,7 +111,7 @@ Read references/session-flow.md
 
 ### Step 2: 检查已有领域
 
-扫描 `~/repos/LearnEverything/domains/` 目录。
+扫描 `domains/` 目录。
 
 ### Step 3: 根据情况分支
 
@@ -149,4 +149,4 @@ Read references/session-flow.md
 2. **阶段性扫描** — 每学习 5-8 个概念后，主动扫描相邻知识域
 3. **跨领域关联** — 多领域并行学习时，发现领域间的知识连接
 
-发现的 unknown unknowns 记录到 `~/repos/LearnEverything/unknown-unknowns/` 并添加到知识图谱。
+发现的 unknown unknowns 记录到 `unknown-unknowns/` 并添加到知识图谱。

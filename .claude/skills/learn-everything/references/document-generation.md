@@ -91,7 +91,7 @@
 读取 `domains/{domain}/docs/` 目录，找到当前最大序号，加 1。如果目录为空，从 `01` 开始。
 
 ### 保存路径
-`~/repos/LearnEverything/domains/{domain-name}/docs/{序号}-{概念名}.md`
+`domains/{domain-name}/docs/{序号}-{概念名}.md`
 
 ### 文档头部元信息
 在文档最开头添加 YAML front matter：

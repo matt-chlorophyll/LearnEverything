@@ -63,7 +63,7 @@
 
 ### 跨领域盲点
 
-保存到 `~/repos/LearnEverything/unknown-unknowns/{YYYY-MM-DD}.md`
+保存到 `unknown-unknowns/{YYYY-MM-DD}.md`
 
 如果当天文件已存在，追加到文件末尾而非覆盖。
 

@@ -11,7 +11,7 @@
 1. 根据用户指定的领域名，生成英文标识（小写、`-` 连接）
 2. 创建目录结构：
    ```
-   ~/repos/LearnEverything/domains/{domain-name}/
+   domains/{domain-name}/
    ├── meta.json
    ├── knowledge-graph.json
    ├── learner-profile.json
