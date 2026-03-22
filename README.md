@@ -49,19 +49,31 @@ claude
 |------|--------|
 | **诊断** | AI 用 5-8 个渐进问题探测你的起点，找到最适合的学习切入点 |
 | **文档生成** | 针对单一概念生成 500-1000 字的学习材料，匹配你当前的理解水平 |
-| **提问验证** | AI 反过来考你——要求你用自己的话解释、举例、解决边界情况 |
+| **提问验证** | AI 反过来考你——要求你用自己的话解释、举例、解决边界情况。包含深度追问：追问链、反例挑战、边界探测、元认知提问 |
 | **练习** | 场景题、对比题、实践题巩固理解 |
 | **总结** | 更新知识图谱，记录 session 摘要，标记发现的知识盲点 |
+
+## 学习者个性化
+
+系统会在学习过程中自动构建你的**学习者画像**，追踪：
+
+- **思维模式**——你偏好类比思维还是逻辑推演？
+- **优势与弱点**——迁移应用能力强？容易混淆边界情况？
+- **学习偏好**——你喜欢先看例子还是先看定义？
+
+画像会影响后续的文档生成、提问难度和反馈风格，让每次学习都更贴合你的特点。
 
 ## 学习数据示例
 
 查看 [`domains/wittgenstein-philosophy/`](domains/wittgenstein-philosophy/) 了解一个真实学习过程产生的数据：
 
 - **知识图谱** ([knowledge-graph.json](domains/wittgenstein-philosophy/knowledge-graph.json))——追踪每个概念的掌握状态（mastered / learning / weak / unknown / undiscovered）
+- **学习者画像** ([learner-profile.json](domains/wittgenstein-philosophy/learner-profile.json))——基于观察构建的思维模式、优势与弱点档案
 - **学习文档** ([docs/](domains/wittgenstein-philosophy/docs/))——AI 生成的个性化学习材料
 - **讨论记录** ([discussions/](domains/wittgenstein-philosophy/discussions/))——提问验证的对话记录
 - **Session 摘要** ([sessions/](domains/wittgenstein-philosophy/sessions/))——每次学习的总结与下次建议
 
 ## 设计方案
 
-详见 [`plan/v1-system-design.md`](plan/v1-system-design.md)。
+- **v1**：核心五阶段学习流程——详见 [`plan/v1-system-design.md`](plan/v1-system-design.md)
+- **v2**：深度提问策略 + 学习者个性化——详见 [`plan/v2-deep-questioning-and-personalization.md`](plan/v2-deep-questioning-and-personalization.md)

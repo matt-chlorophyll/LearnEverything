@@ -122,17 +122,23 @@
     {
       "id": "tractatus-paradox",
       "name": "《逻辑哲学论》的自我取消悖论（梯子比喻）",
-      "status": "undiscovered",
-      "confidence": 0.0,
-      "lastTested": null,
-      "dependencies": ["limits-of-language"],
+      "status": "learning",
+      "confidence": 0.6,
+      "lastTested": "2026-03-17T00:00:00+08:00",
+      "dependencies": ["limits-of-language", "saying-vs-showing"],
       "relatedDomains": [],
-      "sessionHistory": []
+      "sessionHistory": [
+        {
+          "date": "2026-03-17T00:00:00+08:00",
+          "result": "pass",
+          "notes": "理解梯子的运作机制——无意义的命题通过显示完成使命。提出意义vs价值的二维区分并展现自指性觉察。反例挑战中方向正确但框架过窄（遗漏das Mystische）。练习全对，能准确分类命题类型。Q2预测后期走向时部分正确（质疑逻辑结构的真实性）但误判为寻找更好工具"
+        }
+      ]
     },
     {
       "id": "fact-value-distinction",
       "name": "事实与价值判断的区分",
-      "status": "undiscovered",
+      "status": "unknown",
       "confidence": 0.0,
       "lastTested": null,
       "dependencies": ["limits-of-language"],
@@ -163,6 +169,7 @@
     {"from": "limits-of-language", "to": "tractatus-paradox", "type": "extends"},
     {"from": "limits-of-language", "to": "fact-value-distinction", "type": "extends"},
     {"from": "saying-vs-showing", "to": "tractatus-paradox", "type": "extends"},
-    {"from": "language-games", "to": "forms-of-life", "type": "extends"}
+    {"from": "language-games", "to": "forms-of-life", "type": "extends"},
+    {"from": "tractatus-paradox", "to": "language-games", "type": "relates-to"}
   ]
 }
